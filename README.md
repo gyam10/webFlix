@@ -4,7 +4,7 @@
 
 # Features
   1. User authentication (Sign up, Sign in)
-  2. Add movies and TV shows to the watchlist
+  2. Add movies to watch later 
   3. Responsive design for different screen sizes
   4. Firebase integration for data storage and authentication
 
