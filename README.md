@@ -10,9 +10,8 @@
 
 # Technologies
   Webflix is built using the following technologies:
-  
-    React.js: A JavaScript library for building user interfaces.  
-    Firebase: A cloud-based platform for building web and mobile applications.  
-    Tailwind CSS: A utility-first CSS framework for rapid UI development.  
-    HTML5 & CSS3: Core web technologies for building web applications.
+  1. React.js: A JavaScript library for building user interfaces.  
+  2. Firebase: A cloud-based platform for building web and mobile applications.  
+  3. Tailwind CSS: A utility-first CSS framework for rapid UI development.  
+  4. HTML5 & CSS3: Core web technologies for building web applications.
   
