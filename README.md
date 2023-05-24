@@ -1,6 +1,5 @@
 # Webflix
-  Welcome to Webflix! This is a Netflix clone developed using Firebase, Tailwind CSS, and React.js. Webflix aims to replicate the core features and user   
-  interface of Netflix, allowing users to browse and stream their favorite movies and TV shows.
+  Welcome to Webflix! This is a Netflix clone developed using Firebase, Tailwind CSS, and React.js. Webflix aims to replicate the core features and user   interface of Netflix, allowing users to browse and stream their favorite movies and TV shows.
 
 
 # Features
