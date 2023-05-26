@@ -6,10 +6,12 @@ import { AiOutlinePlusCircle } from "react-icons/ai";
 import { db } from "../firebase";
 import { arrayUnion, doc, updateDoc } from "firebase/firestore";
 import { UserAuth } from "../context/AuthContext";
+import TrailerModal from "./TrailerModal";
 
 const Main = () => {
   const [movies, setMovies] = useState([]);
   const [saved, setSaved] = useState(false);
+  const [showModal, setShowModal] = useState(false);
   const movie = movies[Math.floor(Math.random() * movies.length)];
   const { user } = UserAuth();
   const movieId = doc(db, "User", `${user?.email}`);
@@ -55,7 +57,12 @@ const Main = () => {
         <div className="absolute w-full top-[20%] p-4 md:p-8">
           <h1 className="text-3xl md:text-5xl font-bold">{movie?.title}</h1>
           <div className="my-4 flex">
-            <button className="border  bg-gray-300 text-black border-gray-300 py-2 px-4 flex items-center ">
+            <button
+              className="border  bg-gray-300 text-black border-gray-300 py-2 px-4 flex items-center "
+              onClick={() => {
+                setShowModal(true);
+              }}
+            >
               <FaPlay size={18} className="mx-2" />
               <p>Play</p>
             </button>
@@ -64,7 +71,7 @@ const Main = () => {
               onClick={watchLater}
             >
               <AiOutlinePlusCircle size={20} className="mx-2" />
-              Watch later
+              Watch Later
             </button>
           </div>
           <p className="text-gray-400 text-sm">
@@ -75,6 +82,7 @@ const Main = () => {
           </p>
         </div>
       </div>
+      <TrailerModal onClose={() => setShowModal(false)} visible={showModal} />
     </div>
   );
 };

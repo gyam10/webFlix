@@ -8,10 +8,7 @@ import { doc, onSnapshot, updateDoc } from "firebase/firestore";
 const SavedShows = () => {
   const [movies, setMovies] = useState([]);
   const { user } = UserAuth();
-  const showMovies = onSnapshot(doc(db, "users", `${user?.email}`), (doc) => {
-    console.log("Current Data:", doc.data()?.savedShows);
-    setMovies(doc.data()?.savedShows);
-  });
+
   const slideLeft = () => {
     var slider = document.getElementById("slider");
     slider.scrollLeft = slider.scrollLeft - 500;
@@ -20,11 +17,11 @@ const SavedShows = () => {
     var slider = document.getElementById("slider");
     slider.scrollLeft = slider.scrollLeft + 500;
   };
+
   useEffect(() => {
-    // onSnapshot(showMovies, (doc) => {
-    //   setMovies(doc?.data()?.savedShows);
-    // });
-    showMovies();
+    onSnapshot(doc(db, "User", `${user?.email}`), (doc) => {
+      setMovies(doc?.data()?.savedShows);
+    });
   }, [user?.email]);
 
   const movieRef = doc(db, "User", `${user?.email}`);
